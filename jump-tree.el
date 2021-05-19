@@ -589,10 +589,6 @@
 
 (unless jump-tree-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "M-,") 'jump-tree-jump-prev)
-    (define-key map (kbd "M-.") 'jump-tree-jump-next)
-    ;; we use "C-x j" for the jump-tree visualizer
-    (define-key map (kbd "\C-x j") 'jump-tree-visualize)
     ;; set keymap
     (setq jump-tree-map map)))
 

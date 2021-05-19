@@ -409,10 +409,10 @@ Comparison is done with `eq'."
   "If the file or buffer is closed, then the marker is invalid.
 This function will remove these invalid entries."
   (setq jump-tree-pos-list
-        (remove-if (lambda (position)
-                     (or (not (markerp (cdr position)))
-                         (not (marker-buffer (cdr position)))))
-                   jump-tree-pos-list)))
+        (cl-remove-if (lambda (position)
+                        (or (not (markerp (cdr position)))
+                            (not (marker-buffer (cdr position)))))
+                      jump-tree-pos-list)))
 
 (defun jump-tree-pos-list-first-diff-position (tree-position)
   "Get the first different position from `jump-tree-pos-list'."
